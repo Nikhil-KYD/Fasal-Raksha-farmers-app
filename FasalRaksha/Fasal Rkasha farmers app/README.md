@@ -1,2 +1,0 @@
-# Fasal Rkasha farmers app
-
