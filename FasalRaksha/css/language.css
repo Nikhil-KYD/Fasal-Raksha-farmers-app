@@ -1,0 +1,263 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-image:linear-gradient(rgba(255, 255, 255, 0.75),
+                                       rgba(255, 255, 255, 0.75)),
+    url("../images/crops.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #123524;
+    min-height: 100vh;
+
+    
+}
+
+
+/* =========================
+   MAIN SCREEN
+========================= */
+
+.language-screen {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px 20px;
+}
+
+
+/* =========================
+   LOGO SECTION
+========================= */
+
+.logo-section {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.logo-section img {
+
+    width: 150px;
+
+    height: 150px;
+
+    object-fit: contain;
+
+    margin-bottom: 10px;
+}
+
+
+.logo-section h1 {
+
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+
+.logo-section p {
+
+    color: #65786b;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   LANGUAGE BOX
+========================= */
+
+.language-box {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    text-align: center;
+}
+
+
+.language-box h2 {
+
+    font-size: 25px;
+
+    margin-bottom: 7px;
+}
+
+
+.english-text {
+
+    color: #65786b;
+
+    margin-bottom: 25px;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   LANGUAGE BUTTON
+========================= */
+
+.language-button {
+
+    width: 100%;
+
+    min-height: 70px;
+
+    margin-bottom: 15px;
+
+    padding: 15px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    text-align: left;
+
+    border: 2px solid #dce7de;
+
+    border-radius: 14px;
+
+    background: white;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.language-button:hover {
+
+    border-color: #168044;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+.language-button:active {
+
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   LANGUAGE CONTENT
+========================= */
+
+.language-icon {
+
+    font-size: 30px;
+
+    margin-right: 15px;
+}
+
+
+.language-name {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    flex: 1;
+}
+
+
+.arrow {
+
+    font-size: 22px;
+
+    color: #168044;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-text {
+
+    margin-top: 35px;
+
+    color: #718177;
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .language-screen {
+
+        padding: 25px 20px;
+    }
+
+
+    .logo-section {
+
+        margin-bottom: 35px;
+    }
+
+
+    .logo-section img {
+
+        width: 125px;
+
+        height: 125px;
+    }
+
+
+    .logo-section h1 {
+
+        font-size: 27px;
+    }
+
+
+    .language-box h2 {
+
+        font-size: 22px;
+    }
+
+
+    .language-button {
+
+        min-height: 65px;
+    }
+
+}
