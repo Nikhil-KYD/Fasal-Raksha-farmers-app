@@ -16,9 +16,9 @@
 body {
     font-family: Arial, sans-serif;
 
-    background-image:linear-gradient(rgba(255, 255, 255, 0.75),
+    background-image:linear-gradient(rgba(255, 255, 255, 0.523),
                                        rgba(255, 255, 255, 0.75)),
-    url("../images/crops.jpg");
+    url("../images/crop2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

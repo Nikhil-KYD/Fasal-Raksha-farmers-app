@@ -1,0 +1,438 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.508),
+            rgba(255, 255, 255, 0.75)
+        ),
+        url("../images/crop2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #123524;
+}
+
+
+/* =========================
+   MAIN SCREEN
+========================= */
+
+.login-screen {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.logo-section img {
+    width: 90px;
+    height: 90px;
+
+    object-fit: contain;
+
+    margin-bottom: 8px;
+}
+
+.logo-section h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.logo-section p {
+    color: #557466;
+    font-size: 15px;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+
+    background: rgba(208, 240, 215, 0.94);
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.login-card h2 {
+    text-align: center;
+
+    font-size: 26px;
+
+    margin-bottom: 7px;
+}
+
+#login-subtitle {
+    text-align: center;
+
+    color: #718078;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   LABELS
+========================= */
+
+label {
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+    margin-top: 15px;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #d5dfda;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    outline: none;
+
+    background: white;
+}
+
+input:focus {
+    border-color: #2d8a5c;
+
+    box-shadow:
+        0 0 0 3px rgba(45, 138, 92, 0.12);
+}
+
+
+/* =========================
+   MOBILE INPUT
+========================= */
+
+.input-group {
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid #d5dfda;
+
+    border-radius: 12px;
+
+    background: white;
+
+    overflow: hidden;
+}
+
+.input-group span {
+    padding-left: 14px;
+
+    font-weight: bold;
+
+    color: #555;
+}
+
+.input-group input {
+    border: none;
+
+    border-radius: 0;
+
+    flex: 1;
+}
+
+.input-group input:focus {
+    box-shadow: none;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+========================= */
+
+#login-button {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #218653;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#login-button:hover {
+    background: #176b41;
+}
+
+
+/* =========================
+   SIGN UP
+========================= */
+
+.signup-text {
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    color: #68776f;
+}
+
+.signup-button {
+    border: none;
+
+    background: none;
+
+    color: #218653;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button {
+    margin-top: 20px;
+
+    border: none;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    color: #218653;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CUSTOM ALERT
+========================= */
+
+.alert-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 9999;
+}
+
+
+/* =========================
+   ALERT BOX
+========================= */
+
+.alert-box {
+    width: 100%;
+
+    max-width: 350px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 30px 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+    animation: alertAppear 0.2s ease;
+}
+
+
+/* =========================
+   ALERT ICON
+========================= */
+
+.alert-icon {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   ALERT TITLE
+========================= */
+
+.alert-box h3 {
+    font-size: 22px;
+
+    margin-bottom: 10px;
+
+    color: #123524;
+}
+
+
+/* =========================
+   ALERT MESSAGE
+========================= */
+
+.alert-box p {
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: #68776f;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   ALERT BUTTON
+========================= */
+
+#alert-button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #218653;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#alert-button:hover {
+    background: #176b41;
+}
+
+
+/* =========================
+   ALERT ANIMATION
+========================= */
+
+@keyframes alertAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .login-screen {
+        padding: 20px 15px;
+    }
+
+    .login-card {
+        padding: 22px;
+    }
+
+    .logo-section img {
+        width: 75px;
+        height: 75px;
+    }
+
+    .logo-section h1 {
+        font-size: 26px;
+    }
+
+}
