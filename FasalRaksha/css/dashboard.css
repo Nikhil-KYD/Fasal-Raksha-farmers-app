@@ -93,20 +93,22 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
 }
 
-/*.profile-button img {
+/*circular profile !!!!!!!!!!!!!!!!*/
+
+.profile-button img {
     width: 100%;
     height: 100%;
 
     border-radius: 50%;
 
     object-fit: cover;
-}*/
+}
 
 /*GOOFY AHH DOG!!!!!!!*/
 .draggable {
     position: fixed;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit: contain;
     cursor: grab;
     user-select: none;
@@ -255,7 +257,7 @@ body {
 
 
 .quick-card {
-    padding: 20px;
+    padding: 50;
 
     border: none;
 
@@ -273,6 +275,11 @@ body {
     transition: 0.2s;
 }
 
+.quick-card img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
 
 .quick-card:hover {
     transform: translateY(-3px);
