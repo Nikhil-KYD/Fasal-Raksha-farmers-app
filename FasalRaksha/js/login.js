@@ -103,10 +103,7 @@ document.getElementById("signup-button").textContent =
 document.getElementById("back-text").textContent =
     text.back;
 
-
-// =========================
 // LOGIN
-// =========================
 
 function loginUser() {
 
