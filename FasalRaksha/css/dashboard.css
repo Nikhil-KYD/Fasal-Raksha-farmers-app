@@ -306,31 +306,86 @@ body {
    CROP HEALTH
 ========================= */
 
+/* Crop Health */
+
 .health-card {
-    background: white;
-
-    border-radius: 18px;
-
-    padding: 20px;
-
-    box-shadow:
-        0 6px 18px rgba(0, 0, 0, 0.08);
+    margin-top: 25px;
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
-
 
 .health-card h2 {
-    font-size: 18px;
-
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    color: #123524;
 }
 
+.health-subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
 
-.health-card p {
-    color: #68776f;
+.health-status {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
 
+.health-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.health-item strong {
+    display: block;
     font-size: 14px;
 }
 
+.health-item p {
+    margin-top: 3px;
+    font-size: 13px;
+    color: #777;
+}
+
+.health-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.healthy {
+    background: #35a853;
+}
+
+.warning {
+    background: #f5b700;
+}
+
+.danger {
+    background: #e53935;
+}
+
+.last-scan {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 14px;
+    background: #f4f8f3;
+}
+
+.last-scan p {
+    margin-top: 6px;
+}
+
+.last-scan small {
+    display: block;
+    margin-top: 4px;
+    color: #777;
+}
 
 /* =========================
    SMALL PHONES
@@ -348,6 +403,18 @@ body {
 
     .scan-card {
         padding: 25px 20px;
+    }
+
+}
+@media (max-width: 600px) {
+
+    .health-status {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .health-item {
+        padding: 8px;
     }
 
 }
