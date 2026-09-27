@@ -184,29 +184,26 @@ async function loginUser() {
     // LOGIN ERROR
     // =========================
 
-    if (error) {
+    // =========================
+// LOGIN ERROR
+// =========================
 
-        console.error("Login error:", error);
+if (error) {
 
-        if (language === "hi") {
+    console.error("Login error:", error);
 
-            showAlert(
-                "लॉग इन असफल",
-                "ईमेल या पासवर्ड गलत है।",
-                "⚠️"
-            );
+    showAlert(
+        language === "hi"
+            ? "लॉग इन असफल"
+            : "Login Failed",
 
-        } else {
+        error.message,
 
-            showAlert(
-                "Login Failed",
-                "Incorrect email or password.",
-                "⚠️"
-            );
-        }
+        "⚠️"
+    );
 
-        return;
-    }
+    return;
+}
 
 
     // =========================
