@@ -19,12 +19,12 @@ body {
 
     background-image:
         linear-gradient(
-            rgba(255, 255, 255, 0.508),
-            rgba(255, 255, 255, 0.75)
+            rgba(255, 255, 255, 0.037),
+            rgba(255, 255, 255, 0.097)
         ),
         url("../images/crop2.jpg");
 
-    background-size: cover;
+    background-size: 600px 1200px;
     background-position: center;
     background-repeat: no-repeat;
 

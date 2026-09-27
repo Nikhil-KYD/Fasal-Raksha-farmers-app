@@ -15,19 +15,20 @@
 
 body {
     font-family: Arial, sans-serif;
-
-    background-image:linear-gradient(rgba(255, 255, 255, 0.523),
-                                       rgba(255, 255, 255, 0.75)),
-    url("../images/crop2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-
-    color: #123524;
     min-height: 100vh;
 
-    
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.442),
+            rgba(255, 255, 255, 0.507)
+        ),
+        url("../images/crop2.jpg");
+
+    background-size: 600px 1200px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #123524;
 }
 
 
