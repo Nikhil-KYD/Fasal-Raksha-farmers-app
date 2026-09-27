@@ -1,4 +1,14 @@
-// Get selected language
+// =========================
+// SUPABASE
+// =========================
+
+import { supabase } from "./supabase.js";
+
+
+// =========================
+// GET SELECTED LANGUAGE
+// =========================
+
 const language = localStorage.getItem("language") || "en";
 
 
@@ -9,56 +19,42 @@ const language = localStorage.getItem("language") || "en";
 const translations = {
 
     en: {
-
         welcome: "Welcome to Fasal Raksha",
-
         login: "Login",
-
         subtitle: "Login to protect your crops",
 
-        mobile: "Mobile Number",
-
-        mobilePlaceholder: "Enter mobile number",
+        email: "Email",
+        emailPlaceholder: "Enter email",
 
         password: "Password",
-
         passwordPlaceholder: "Enter password",
 
         loginButton: "Login",
 
         signupQuestion: "Don't have an account?",
-
         signupButton: "Create Account",
 
         back: "Change Language"
-
     },
 
 
     hi: {
-
         welcome: "फसल रक्षा में आपका स्वागत है",
-
         login: "लॉग इन करें",
-
         subtitle: "अपनी फसलों की सुरक्षा के लिए लॉग इन करें",
 
-        mobile: "मोबाइल नंबर",
-
-        mobilePlaceholder: "मोबाइल नंबर दर्ज करें",
+        email: "ईमेल",
+        emailPlaceholder: "ईमेल दर्ज करें",
 
         password: "पासवर्ड",
-
         passwordPlaceholder: "पासवर्ड दर्ज करें",
 
         loginButton: "लॉग इन करें",
 
         signupQuestion: "क्या आपका खाता नहीं है?",
-
         signupButton: "खाता बनाएं",
 
         back: "भाषा बदलें"
-
     }
 
 };
@@ -79,11 +75,11 @@ document.getElementById("login-title").textContent =
 document.getElementById("login-subtitle").textContent =
     text.subtitle;
 
-document.getElementById("mobile-label").textContent =
-    text.mobile;
+document.getElementById("email-label").textContent =
+    text.email;
 
-document.getElementById("mobile").placeholder =
-    text.mobilePlaceholder;
+document.getElementById("email").placeholder =
+    text.emailPlaceholder;
 
 document.getElementById("password-label").textContent =
     text.password;
@@ -103,70 +99,123 @@ document.getElementById("signup-button").textContent =
 document.getElementById("back-text").textContent =
     text.back;
 
+
+// =========================
 // LOGIN
+// =========================
 
-function loginUser() {
+async function loginUser() {
 
-    const mobile =
-        document.getElementById("mobile").value;
+    const email =
+        document.getElementById("email").value.trim();
 
     const password =
         document.getElementById("password").value;
 
 
-    if (mobile.length !== 10) {
+    // =========================
+    // EMAIL VALIDATION
+    // =========================
+
+    if (!email) {
 
         if (language === "hi") {
 
             showAlert(
-                       "गलत मोबाइल नंबर",
-                        "कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।",
-                        "⚠️"
-                            );
+                "ईमेल दर्ज करें",
+                "कृपया अपना ईमेल दर्ज करें।",
+                "⚠️"
+            );
+
         } else {
 
-                            showAlert(
-                        "Invalid Mobile Number",
-                        "Please enter a valid 10-digit mobile number.",
-                        "⚠️"
-                    );
-
+            showAlert(
+                "Enter Email",
+                "Please enter your email address.",
+                "⚠️"
+            );
         }
 
         return;
     }
 
 
+    // =========================
+    // PASSWORD VALIDATION
+    // =========================
+
     if (password.length < 6) {
 
         if (language === "hi") {
 
-                showAlert(
-        "पासवर्ड बहुत छोटा है",
-        "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।",
-        "🔐"
-    );
+            showAlert(
+                "पासवर्ड बहुत छोटा है",
+                "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।",
+                "🔐"
+            );
 
         } else {
 
             showAlert(
                 "Password Too Short",
                 "Password must be at least 6 characters.",
-                 "🔐");
-
-
+                "🔐"
+            );
         }
 
         return;
     }
 
 
-    // Temporary login
-    alert(
-        language === "hi"
-            ? "लॉग इन सफल! "
-            : "Login successful! "
-    );
+    // =========================
+    // LOGIN WITH SUPABASE
+    // =========================
+
+    const { data, error } =
+        await supabase.auth.signInWithPassword({
+
+            email: email,
+            password: password
+
+        });
+
+
+    // =========================
+    // LOGIN ERROR
+    // =========================
+
+    if (error) {
+
+        console.error("Login error:", error);
+
+        if (language === "hi") {
+
+            showAlert(
+                "लॉग इन असफल",
+                "ईमेल या पासवर्ड गलत है।",
+                "⚠️"
+            );
+
+        } else {
+
+            showAlert(
+                "Login Failed",
+                "Incorrect email or password.",
+                "⚠️"
+            );
+        }
+
+        return;
+    }
+
+
+    // =========================
+    // LOGIN SUCCESS
+    // =========================
+
+    console.log("Logged in user:", data.user);
+
+    window.location.href = "dashboard.html";
 }
 
 
@@ -174,13 +223,125 @@ function loginUser() {
 // SIGN UP
 // =========================
 
-function showSignup() {
+async function showSignup() {
 
-    alert(
-        language === "hi"
-            ? "खाता बनाने की सुविधा जल्द आ रही है।"
-            : "Account creation is coming soon."
-    );
+    const email =
+        document.getElementById("email").value.trim();
+
+    const password =
+        document.getElementById("password").value;
+
+
+    // =========================
+    // EMAIL VALIDATION
+    // =========================
+
+    if (!email) {
+
+        if (language === "hi") {
+
+            showAlert(
+                "ईमेल दर्ज करें",
+                "खाता बनाने के लिए अपना ईमेल दर्ज करें।",
+                "⚠️"
+            );
+
+        } else {
+
+            showAlert(
+                "Enter Email",
+                "Enter your email address to create an account.",
+                "⚠️"
+            );
+        }
+
+        return;
+    }
+
+
+    // =========================
+    // PASSWORD VALIDATION
+    // =========================
+
+    if (password.length < 6) {
+
+        if (language === "hi") {
+
+            showAlert(
+                "पासवर्ड बहुत छोटा है",
+                "पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।",
+                "🔐"
+            );
+
+        } else {
+
+            showAlert(
+                "Password Too Short",
+                "Password must be at least 6 characters.",
+                "🔐"
+            );
+        }
+
+        return;
+    }
+
+
+    // =========================
+    // CREATE ACCOUNT
+    // =========================
+
+    const { data, error } =
+        await supabase.auth.signUp({
+
+            email: email,
+            password: password
+
+        });
+
+
+    // =========================
+    // SIGN UP ERROR
+    // =========================
+
+    if (error) {
+
+        console.error("Signup error:", error);
+
+        showAlert(
+
+            language === "hi"
+                ? "खाता नहीं बन सका"
+                : "Account Creation Failed",
+
+            error.message,
+
+            "⚠️"
+        );
+
+        return;
+    }
+
+
+    // =========================
+    // SIGN UP SUCCESS
+    // =========================
+
+    if (language === "hi") {
+
+        showAlert(
+            "खाता बन गया",
+            "आपका खाता सफलतापूर्वक बन गया। अब आप लॉग इन कर सकते हैं।",
+            "✓"
+        );
+
+    } else {
+
+        showAlert(
+            "Account Created",
+            "Your account was created successfully. You can now log in.",
+            "✓"
+        );
+    }
 }
 
 
@@ -192,6 +353,7 @@ function goBack() {
 
     window.location.href = "index.html";
 }
+
 
 // =========================
 // CUSTOM ALERT
@@ -218,8 +380,14 @@ function closeAlert() {
     document.getElementById("custom-alert").style.display =
         "none";
 }
-function closeAlert() {
 
-    document.getElementById("custom-alert").style.display =
-        "none";
-}
+
+// =========================
+// MAKE FUNCTIONS AVAILABLE
+// TO HTML onclick
+// =========================
+
+window.loginUser = loginUser;
+window.showSignup = showSignup;
+window.goBack = goBack;
+window.closeAlert = closeAlert;

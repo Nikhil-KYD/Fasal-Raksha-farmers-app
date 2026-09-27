@@ -1,8 +1,9 @@
 function selectLanguage(language) {
+    console.log("Selected language:", language);
 
-    // Save the selected language
     localStorage.setItem("language", language);
 
-    // Move to the login page
     window.location.href = "login.html";
 }
+
+window.selectLanguage = selectLanguage;
