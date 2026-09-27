@@ -15,12 +15,20 @@
 
 body {
     font-family: Arial, sans-serif;
-
     min-height: 100vh;
 
-    background: #123524;
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.508),
+            rgba(255, 255, 255, 0.75)
+        ),
+        url("../images/crop2.jpg");
 
-    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #123524;
 }
 
 
@@ -31,7 +39,6 @@ body {
 .dashboard {
     width: 100%;
     max-width: 500px;
-
     min-height: 100vh;
 
     margin: auto;
@@ -46,25 +53,18 @@ body {
 
 .dashboard-header {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     margin-bottom: 32px;
 }
 
-
 .brand {
     display: flex;
-
     align-items: center;
 
     gap: 10px;
 }
-
-
-/* YOUR ORIGINAL LOGO */
 
 .brand img {
     width: 45px;
@@ -73,10 +73,8 @@ body {
     object-fit: contain;
 }
 
-
 .brand h1 {
     font-size: 20px;
-
     font-weight: 700;
 
     color: #ffffff;
@@ -94,7 +92,6 @@ body {
     padding: 0;
 
     border: 2px solid #8fbc9f;
-
     border-radius: 50%;
 
     background: #234b35;
@@ -103,7 +100,6 @@ body {
 
     overflow: hidden;
 }
-
 
 .profile-button img {
     width: 100%;
@@ -123,20 +119,17 @@ body {
     margin-bottom: 22px;
 }
 
-
 .welcome h2 {
     font-size: 26px;
-
     margin-bottom: 7px;
 
     color: #ffffff;
 }
 
-
 .welcome p {
     font-size: 14px;
 
-    color: #b7cbbd;
+    color: #f4f6f5;
 }
 
 
@@ -158,10 +151,8 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
 }
 
-
 .scan-content {
     display: flex;
-
     align-items: center;
 
     gap: 15px;
@@ -170,39 +161,127 @@ body {
 }
 
 
-.scan-icon {
-    width: 60px;
-    height: 60px;
+/* =========================
+   SCAN PREVIEW
+========================= */
+
+.scan-preview {
+    position: relative;
+
+    width: 85px;
+    height: 85px;
 
     flex-shrink: 0;
 
-    background: #ffffff;
-
-    border-radius: 17px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
     overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #dfe9e1;
 }
 
-
-.scan-icon img {
-    width: 60px;
-    height: 60px;
+.scan-preview img {
+    width: 100%;
+    height: 100%;
 
     object-fit: cover;
+
+    display: block;
 }
 
+
+/* =========================
+   SCANNING LINE
+========================= */
+
+.scan-line {
+    position: absolute;
+
+    left: 8px;
+    right: 8px;
+
+    height: 2px;
+
+    background: #ffffff;
+
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+
+    animation: scanMove 2.2s ease-in-out infinite;
+}
+
+@keyframes scanMove {
+
+    0% {
+        top: 10px;
+        opacity: 0.4;
+    }
+
+    50% {
+        top: 72px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 10px;
+        opacity: 0.4;
+    }
+}
+
+
+/* =========================
+   SCAN CORNERS
+========================= */
+
+.scan-corner {
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    border-color: white;
+    border-style: solid;
+
+    opacity: 0.9;
+}
+
+.top-left {
+    top: 10px;
+    left: 10px;
+
+    border-width: 2px 0 0 2px;
+}
+
+.top-right {
+    top: 10px;
+    right: 10px;
+
+    border-width: 2px 2px 0 0;
+}
+
+.bottom-left {
+    bottom: 10px;
+    left: 10px;
+
+    border-width: 0 0 2px 2px;
+}
+
+.bottom-right {
+    bottom: 10px;
+    right: 10px;
+
+    border-width: 0 2px 2px 0;
+}
+
+
+/* =========================
+   SCAN TEXT
+========================= */
 
 .scan-text h2 {
     font-size: 20px;
 
     margin-bottom: 5px;
 }
-
 
 .scan-text p {
     font-size: 13px;
@@ -223,25 +302,56 @@ body {
     padding: 14px;
 
     border: none;
-
     border-radius: 12px;
 
     background: #176b41;
-
     color: white;
 
     font-size: 15px;
-
     font-weight: bold;
 
     cursor: pointer;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    white-space: nowrap;
+
     transition: 0.2s;
 }
 
-
 #scan-button:hover {
     background: #0e5a35;
+
+    transform: translateY(-1px);
+}
+
+#scan-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   CAMERA ICON
+========================= */
+
+.camera-icon-small {
+    width: 18px;
+    height: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.camera-icon-small svg {
+    width: 18px;
+    height: 18px;
+
+    display: block;
 }
 
 
@@ -253,17 +363,13 @@ body {
     margin-bottom: 28px;
 }
 
-
 .section-heading {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     margin-bottom: 13px;
 }
-
 
 .section-heading h2 {
     font-size: 18px;
@@ -271,13 +377,11 @@ body {
     color: #ffffff;
 }
 
-
 .view-button {
     border: none;
-
     background: transparent;
 
-    color: #a8d2b5;
+    color: #ffffff;
 
     font-size: 13px;
 
@@ -286,237 +390,57 @@ body {
 
 
 /* =========================
-   MY CROPS
+   EMPTY CARDS
 ========================= */
 
-.crop-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 12px;
-}
-
-
-.crop-card {
-    background: #234b35;
-
-    border: 1px solid #356447;
+.empty-card {
+    background: white;
 
     border-radius: 18px;
 
-    padding: 12px;
-
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
-
-
-.crop-image {
-    width: 100%;
-    height: 90px;
-
-    border-radius: 13px;
-
-    background: #315b42;
+    padding: 20px;
 
     display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-
-    margin-bottom: 10px;
-}
-
-
-.crop-image img {
-    width: 68px;
-    height: 68px;
-
-    object-fit: contain;
-}
-
-
-.crop-card h3 {
-    font-size: 14px;
-
-    color: #ffffff;
-
-    margin-bottom: 7px;
-}
-
-
-.crop-status {
-    display: flex;
-
     align-items: center;
 
-    gap: 6px;
+    gap: 15px;
 
-    font-size: 12px;
-
-    color: #b9cdbf;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-
-.status-dot {
-    width: 8px;
-    height: 8px;
-
-    border-radius: 50%;
-}
-
-
-.healthy {
-    background: #54c477;
-}
-
-
-/* =========================
-   ADD CROP
-========================= */
-
-.add-crop {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    min-height: 142px;
-
-    text-align: center;
-}
-
-
-.add-icon {
-    width: 42px;
-    height: 42px;
-
-    border-radius: 50%;
-
-    background: #315b42;
-
-    color: #a9d6b5;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    font-size: 25px;
-
-    margin-bottom: 10px;
-}
-
-
-.add-crop h3 {
-    color: #ffffff;
-
-    margin-bottom: 4px;
-}
-
-
-.add-crop p {
-    font-size: 12px;
-
-    color: #9eb6a6;
-}
-
-
-/* =========================
-   RECENT SCANS
-========================= */
-
-.recent-scan-card {
-    background: #234b35;
-
-    border: 1px solid #356447;
-
-    border-radius: 18px;
-
-    padding: 13px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
-}
-
-
-.recent-icon {
-    width: 52px;
-    height: 52px;
+.empty-icon {
+    width: 48px;
+    height: 48px;
 
     flex-shrink: 0;
 
-    background: #315b42;
+    border-radius: 15px;
 
-    border-radius: 13px;
+    background: #eaf3ec;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
-    overflow: hidden;
+    font-size: 24px;
+
+    color: #176b41;
 }
 
-
-.recent-icon img {
-    width: 42px;
-    height: 42px;
-
-    object-fit: contain;
-}
-
-
-.recent-info {
-    flex: 1;
-}
-
-
-.recent-info h3 {
+.empty-card h3 {
     font-size: 14px;
 
-    color: #ffffff;
+    color: #173b29;
 
-    margin-bottom: 4px;
+    margin-bottom: 5px;
 }
 
-
-.recent-info p {
-    font-size: 12px;
-
-    color: #c0d1c5;
-
-    margin-bottom: 3px;
-}
-
-
-.recent-info span {
+.empty-card p {
     font-size: 11px;
 
-    color: #8fa99a;
-}
+    line-height: 1.4;
 
-
-.scan-status {
-    font-size: 11px;
-
-    color: #b7edc5;
-
-    background: #315b42;
-
-    padding: 5px 8px;
-
-    border-radius: 8px;
+    color: #718078;
 }
 
 
@@ -525,7 +449,7 @@ body {
 ========================= */
 
 .health-card {
-    background: #234b35;
+    background: #242525;
 
     border: 1px solid #356447;
 
@@ -538,6 +462,9 @@ body {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
+.health-card .section-heading {
+    margin-bottom: 8px;
+}
 
 .health-subtitle {
     color: #9eb6a6;
@@ -547,7 +474,6 @@ body {
     margin-bottom: 18px;
 }
 
-
 .health-status {
     display: grid;
 
@@ -555,7 +481,6 @@ body {
 
     gap: 8px;
 }
-
 
 .health-item {
     text-align: center;
@@ -565,11 +490,9 @@ body {
     border-right: 1px solid #3a6048;
 }
 
-
 .health-item:last-child {
     border-right: none;
 }
-
 
 .health-item strong {
     display: block;
@@ -581,13 +504,11 @@ body {
     margin-bottom: 4px;
 }
 
-
 .health-item p {
     font-size: 11px;
 
     color: #9eb6a6;
 }
-
 
 .health-dot {
     display: block;
@@ -600,11 +521,13 @@ body {
     margin: 0 auto 7px;
 }
 
+.healthy {
+    background: #54c477;
+}
 
 .warning {
     background: #e5b83f;
 }
-
 
 .danger {
     background: #e45b5b;
@@ -628,19 +551,17 @@ body {
 
     height: 68px;
 
-    background: #183c29;
+    background: #0d2719;
 
-    border-top: 1px solid #315943;
+    border-top: 1px solid #f9f9f9;
 
     display: flex;
 
     justify-content: space-around;
-
     align-items: center;
 
     z-index: 100;
 }
-
 
 .nav-item {
     border: none;
@@ -654,7 +575,6 @@ body {
     text-align: center;
 }
 
-
 .nav-item span {
     display: block;
 
@@ -663,11 +583,9 @@ body {
     margin-bottom: 3px;
 }
 
-
 .nav-item p {
     font-size: 10px;
 }
-
 
 .nav-item.active {
     color: #a9d6b5;
@@ -686,29 +604,511 @@ body {
         padding: 20px 15px 90px;
     }
 
-
     .brand h1 {
         font-size: 18px;
     }
-
 
     .welcome h2 {
         font-size: 23px;
     }
 
-
     .scan-card {
         padding: 18px;
     }
 
-
-    .crop-grid {
-        gap: 9px;
+    .scan-preview {
+        width: 75px;
+        height: 75px;
     }
 
+    .scan-line {
+        left: 7px;
+        right: 7px;
+    }
 
     .health-item strong {
         font-size: 11px;
+    }
+
+}
+/* =========================
+   SCAN OVERLAY
+========================= */
+
+.scan-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+
+/* =========================
+   SCAN MODAL
+========================= */
+
+.scan-modal {
+    position: relative;
+
+    width: 100%;
+    max-width: 430px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    color: #173b29;
+
+    border-radius: 24px;
+
+    padding: 25px 20px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-scan {
+    position: absolute;
+
+    top: 15px;
+    right: 15px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #edf3ef;
+
+    color: #315943;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   SCAN TITLE
+========================= */
+
+.scan-modal h2 {
+    font-size: 22px;
+
+    margin-bottom: 7px;
+
+    padding-right: 40px;
+}
+
+.scan-description {
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #718078;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   SCAN OPTIONS
+========================= */
+
+.scan-options {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =========================
+   SCAN OPTION
+========================= */
+
+.scan-option {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px;
+
+    border: 1px solid #dce8df;
+
+    border-radius: 16px;
+
+    background: #f8fbf9;
+
+    color: #173b29;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.scan-option:hover {
+    background: #edf6ef;
+
+    border-color: #a9cbb2;
+}
+
+.scan-option:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   SCAN OPTION ICON
+========================= */
+
+.scan-option-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #dcecdf;
+
+    color: #176b41;
+}
+
+.scan-option-icon svg {
+    width: 22px;
+    height: 22px;
+}
+
+
+/* =========================
+   OPTION TEXT
+========================= */
+
+.scan-option strong {
+    display: block;
+
+    font-size: 14px;
+
+    margin-bottom: 3px;
+}
+
+.scan-option small {
+    display: block;
+
+    font-size: 11px;
+
+    color: #718078;
+}
+
+
+/* =========================
+   SELECTED IMAGE
+========================= */
+
+.selected-image-container {
+    display: none;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: #edf3ef;
+}
+
+.selected-image-container img {
+    width: 100%;
+
+    max-height: 260px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   AI RESULT
+========================= */
+
+.ai-result {
+    display: none;
+
+    margin-top: 18px;
+
+    padding: 18px;
+
+    background: #f3f8f4;
+
+    border: 1px solid #d8e7dc;
+
+    border-radius: 18px;
+}
+
+
+/* =========================
+   AI BADGE
+========================= */
+
+.ai-result-header {
+    margin-bottom: 10px;
+}
+
+.ai-badge {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    background: #dcecdf;
+
+    color: #176b41;
+
+    font-size: 10px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   RESULT TEXT
+========================= */
+
+.ai-result h3 {
+    font-size: 18px;
+
+    margin-bottom: 6px;
+
+    color: #173b29;
+}
+
+.ai-result > p {
+    font-size: 12px;
+
+    color: #718078;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   RECOMMENDATION
+========================= */
+
+.recommendation {
+    padding: 14px;
+
+    background: #ffffff;
+
+    border-radius: 13px;
+}
+
+.recommendation strong {
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 6px;
+
+    color: #173b29;
+}
+
+.recommendation p {
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #607368;
+}
+
+
+/* =========================
+   DONE BUTTON
+========================= */
+
+.done-scan {
+    display: none;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #176b41;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.done-scan:hover {
+    background: #0e5a35;
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+    .scan-overlay {
+        padding: 12px;
+    }
+
+    .scan-modal {
+        padding: 22px 16px;
+
+        border-radius: 20px;
+    }
+
+    .scan-modal h2 {
+        font-size: 20px;
+    }
+
+    .scan-option {
+        padding: 13px;
+    }
+
+}
+/* =========================
+   AI ANALYZING STATE
+========================= */
+
+.analyzing-state {
+    display: none;
+
+    margin-top: 18px;
+
+    padding: 22px 18px;
+
+    background: #f3f8f4;
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+
+/* Loading circle */
+
+.ai-loader {
+    width: 42px;
+    height: 42px;
+
+    margin: 0 auto 14px;
+
+    border: 4px solid #dcecdf;
+    border-top-color: #176b41;
+
+    border-radius: 50%;
+
+    animation: aiSpin 0.9s linear infinite;
+}
+
+@keyframes aiSpin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* Analyzing title */
+
+.analyzing-state h3 {
+    font-size: 16px;
+
+    color: #173b29;
+
+    margin-bottom: 6px;
+}
+
+
+/* Analyzing description */
+
+.analyzing-state p {
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #718078;
+}
+
+
+/* Small animated dots */
+
+.loading-dots::after {
+    content: "...";
+
+    animation: dots 1.4s infinite;
+}
+
+@keyframes dots {
+
+    0% {
+        content: "";
+    }
+
+    33% {
+        content: ".";
+    }
+
+    66% {
+        content: "..";
+    }
+
+    100% {
+        content: "...";
     }
 
 }
