@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fasal Raksha - Scan Result</title>
+
+    <link rel="stylesheet" href="css/result.css">
+</head>
+
+<body>
+
+    <main class="result-page">
+
+        <header class="result-header">
+            <button class="back-button" onclick="history.back()">
+                ‹
+            </button>
+
+            <h1>Scan Result</h1>
+
+            <div class="header-space"></div>
+        </header>
+
+
+        <section class="result-intro">
+
+            <h2>Crop Analysis</h2>
+
+            <p>
+                Your crop image is ready for analysis.
+            </p>
+
+        </section>
+
+
+        <section class="crop-card">
+
+            <img id="result-image"
+                 src=""
+                 alt="Selected crop">
+
+            <div class="crop-info">
+
+                <span>Selected Crop</span>
+
+                <h2 id="crop-name">
+                    —
+                </h2>
+
+            </div>
+
+        </section>
+
+
+        <section class="analysis-card">
+
+            <div class="analysis-header">
+                <h2>Analysis</h2>
+
+                <span class="status">
+                    Pending
+                </span>
+            </div>
+
+            <div class="analysis-item">
+
+                <div>
+                    <span class="label">Disease / Pest</span>
+                    <strong>Not analyzed yet</strong>
+                </div>
+
+            </div>
+
+            <div class="analysis-item">
+
+                <div>
+                    <span class="label">Confidence</span>
+                    <strong>—</strong>
+                </div>
+
+            </div>
+
+            <div class="analysis-item">
+
+                <div>
+                    <span class="label">Severity</span>
+                    <strong>—</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="recommendation-card">
+
+            <h2>Recommendation</h2>
+
+            <p>
+                AI-based recommendations will appear here
+                after the crop image is analyzed.
+            </p>
+
+        </section>
+
+
+        <button class="back-dashboard"
+                onclick="window.location.href='dashboard.html'">
+
+            Back to Dashboard
+
+        </button>
+
+    </main>
+
+    <script src="js/result.js"></script>
+
+</body>
+
+</html>
