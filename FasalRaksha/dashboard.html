@@ -15,52 +15,62 @@
 <body>
 
     <main class="dashboard">
-        <!--<img src = "images/goofyahh.png" id = "goofy" class = "draggable" alt = "Goofy Image">
-
-            <img src = "images/dumahhdog.jpg" id = "goofy2" class = "draggable" alt = "goody ahh 2">-->
 
         <!-- Header -->
         <header class="dashboard-header">
 
             <div class="brand">
+
+                <!-- YOUR ORIGINAL LOGO - unchanged -->
                 <img src="assets/fasal-logo.png"
                      alt="Fasal Raksha Logo">
 
                 <h1>Fasal Raksha</h1>
+
             </div>
 
             <button class="profile-button">
-                <img src = "images/profile.jpg" alt = "Profile Image">
+                <img src="images/profile.jpg"
+                     alt="Profile Image">
             </button>
 
         </header>
 
 
-
         <!-- Welcome -->
         <section class="welcome">
 
-            <h2>Hello, kisan Zoya
+            <h2>Hello, kisan Zoya</h2>
 
             <p>
-                Protect your crops with smarter technology.
+                Let's keep your crops healthy.
             </p>
+
         </section>
 
 
         <!-- Scan Crop -->
         <section class="scan-card">
 
-            <div class="scan-icon">
-                <img src = "images/scanplanat.jpg"  alt = "Scan Icon">
+            <div class="scan-content">
+
+                <div class="scan-icon">
+                    <img src="images/scanplanat.jpg"
+                         alt="Scan Crop">
+                </div>
+
+                <div class="scan-text">
+
+                    <h2>Scan Crop</h2>
+
+                    <p>
+                        Identify diseases and pests
+                        using AI.
+                    </p>
+
+                </div>
+
             </div>
-
-            <h2>Scan Your Crop</h2>
-
-            <p>
-                Take a photo of your crop to detect
-                diseases and pests.
-            </p>
 
             <button id="scan-button">
                 Start Scan
@@ -69,22 +79,96 @@
         </section>
 
 
-        <!-- Quick Access -->
-        <section class="quick-section">
+        <!-- My Crops -->
+        <section class="section">
 
-            <h2>Quick Access</h2>
+            <div class="section-heading">
 
-            <div class="quick-grid">
+                <h2>My Crops</h2>
 
-                <button class="quick-card">
-                    <img src = "images/plantcute.png" alt = "My Crops Icon">
-                    <p>My Crops</p>
+                <button class="view-button">
+                    View all
                 </button>
 
-                <button class="quick-card">
-                    <span></span>
-                    <p>Scan History</p>
+            </div>
+
+
+            <div class="crop-grid">
+
+                <div class="crop-card">
+
+                    <div class="crop-image">
+                        <img src="images/plantcute.png"
+                             alt="Crop">
+                    </div>
+
+                    <h3>My Crop</h3>
+
+                    <div class="crop-status">
+                        <span class="status-dot healthy"></span>
+                        Healthy
+                    </div>
+
+                </div>
+
+
+                <div class="crop-card add-crop">
+
+                    <div class="add-icon">
+                        +
+                    </div>
+
+                    <h3>Add Crop</h3>
+
+                    <p>
+                        Add another crop
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Scans -->
+        <section class="section">
+
+            <div class="section-heading">
+
+                <h2>Recent Scans</h2>
+
+                <button class="view-button">
+                    View all
                 </button>
+
+            </div>
+
+
+            <div class="recent-scan-card">
+
+                <div class="recent-icon">
+                    <img src="images/plantcute.png"
+                         alt="Recent Scan">
+                </div>
+
+                <div class="recent-info">
+
+                    <h3>Latest Crop Scan</h3>
+
+                    <p>
+                        No disease detected
+                    </p>
+
+                    <span>
+                        Scanned recently
+                    </span>
+
+                </div>
+
+                <div class="scan-status">
+                    Healthy
+                </div>
 
             </div>
 
@@ -92,49 +176,101 @@
 
 
         <!-- Crop Health -->
-       <section class="health-card">
+        <section class="health-card">
 
-    <h2>Crop Health</h2>
+            <div class="section-heading">
 
-    <p class="health-subtitle">
-        Overview of your recent crop scans
-    </p>
+                <h2>Crop Health</h2>
 
-    <div class="health-status">
+                <button class="view-button">
+                    View all
+                </button>
 
-        <div class="health-item">
-            <span class="health-dot healthy"></span>
-            <div>
-                <strong>Healthy</strong>
-                <p>2 Crops</p>
             </div>
-        </div>
 
-        <div class="health-item">
-            <span class="health-dot warning"></span>
-            <div>
-                <strong>Needs Check</strong>
-                <p>1 Crop</p>
+
+            <p class="health-subtitle">
+                Overview of your recent crop scans
+            </p>
+
+
+            <div class="health-status">
+
+                <div class="health-item">
+
+                    <span class="health-dot healthy"></span>
+
+                    <div>
+                        <strong>Healthy</strong>
+                        <p>2 Crops</p>
+                    </div>
+
+                </div>
+
+
+                <div class="health-item">
+
+                    <span class="health-dot warning"></span>
+
+                    <div>
+                        <strong>Needs Check</strong>
+                        <p>1 Crop</p>
+                    </div>
+
+                </div>
+
+
+                <div class="health-item">
+
+                    <span class="health-dot danger"></span>
+
+                    <div>
+                        <strong>At Risk</strong>
+                        <p>0 Crops</p>
+                    </div>
+
+                </div>
+
             </div>
-        </div>
 
-        <div class="health-item">
-            <span class="health-dot danger"></span>
-            <div>
-                <strong>At Risk</strong>
-                <p>0 Crops</p>
-            </div>
-        </div>
+        </section>
 
-    </div>
 
-    <div class="last-scan">
-        <strong>Last Scan</strong>
-        <p>🌿 Tomato — Healthy</p>
-        <small>Scanned recently</small>
-    </div>
+        <!-- Simple Bottom Navigation -->
+        <nav class="bottom-nav">
 
-</section>
+            <button class="nav-item active">
+
+                <span>⌂</span>
+                <p>Home</p>
+
+            </button>
+
+
+            <button class="nav-item">
+
+                <span>🌱</span>
+                <p>Crops</p>
+
+            </button>
+
+
+            <button class="nav-item">
+
+                <span>◷</span>
+                <p>History</p>
+
+            </button>
+
+
+            <button class="nav-item">
+
+                <span>♙</span>
+                <p>Profile</p>
+
+            </button>
+
+        </nav>
 
     </main>
 

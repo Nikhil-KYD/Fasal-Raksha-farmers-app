@@ -1,3 +1,7 @@
+/* =========================
+   RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,20 +15,12 @@
 
 body {
     font-family: Arial, sans-serif;
+
     min-height: 100vh;
 
-    background:
-        linear-gradient(
-            rgba(255, 255, 255, 0.78),
-            rgba(255, 255, 255, 0.78)
-        ),
-        url("../images/crop2.jpg");
+    background: #123524;
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    color: #123524;
+    color: #ffffff;
 }
 
 
@@ -40,7 +36,7 @@ body {
 
     margin: auto;
 
-    padding: 25px 20px;
+    padding: 24px 20px 90px;
 }
 
 
@@ -50,19 +46,25 @@ body {
 
 .dashboard-header {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
-    margin-bottom: 70px;
+    margin-bottom: 32px;
 }
 
 
 .brand {
     display: flex;
+
     align-items: center;
+
     gap: 10px;
 }
 
+
+/* YOUR ORIGINAL LOGO */
 
 .brand img {
     width: 45px;
@@ -73,27 +75,35 @@ body {
 
 
 .brand h1 {
-    font-size: 22px;
+    font-size: 20px;
+
+    font-weight: 700;
+
+    color: #ffffff;
 }
 
+
+/* =========================
+   PROFILE
+========================= */
 
 .profile-button {
     width: 42px;
     height: 42px;
 
-    border: none;
+    padding: 0;
+
+    border: 2px solid #8fbc9f;
+
     border-radius: 50%;
 
-    background: white;
-
-    font-size: 20px;
+    background: #234b35;
 
     cursor: pointer;
 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+    overflow: hidden;
 }
 
-/*circular profile !!!!!!!!!!!!!!!!*/
 
 .profile-button img {
     width: 100%;
@@ -104,39 +114,29 @@ body {
     object-fit: cover;
 }
 
-/*GOOFY AHH DOG!!!!!!!*/
-.draggable {
-    position: fixed;
-    width: 300px;
-    height: 300px;
-    object-fit: contain;
-    cursor: grab;
-    user-select: none;
-    touch-action: none;
-    z-index: 9999;
-}
 
-.draggable:active {
-    cursor: grabbing;
-}
 /* =========================
    WELCOME
 ========================= */
 
 .welcome {
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 
 .welcome h2 {
     font-size: 26px;
+
     margin-bottom: 7px;
+
+    color: #ffffff;
 }
 
 
 .welcome p {
-    color: #68776f;
-    font-size: 15px;
+    font-size: 14px;
+
+    color: #b7cbbd;
 }
 
 
@@ -145,59 +145,71 @@ body {
 ========================= */
 
 .scan-card {
-    background: rgba(208, 240, 215, 0.95);
+    background: #dcecdf;
 
-    border-radius: 24px;
+    border-radius: 22px;
 
-    padding: 30px 25px;
-
-    text-align: center;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.10);
+    padding: 22px;
 
     margin-bottom: 30px;
+
+    color: #173b29;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+.scan-content {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
 }
 
 
 .scan-icon {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
 
-    margin: 0 auto 15px;
+    flex-shrink: 0;
+
+    background: #ffffff;
+
+    border-radius: 17px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    background: white;
-
-    border-radius: 18px;
-
-    font-size: 30px;
+    overflow: hidden;
 }
+
+
 .scan-icon img {
-    width: 70px;
-    height: 70px;
-    border-radius: 18px;
-    object-fit: contain;
+    width: 60px;
+    height: 60px;
+
+    object-fit: cover;
 }
 
 
-.scan-card h2 {
-    font-size: 23px;
-    margin-bottom: 8px;
+.scan-text h2 {
+    font-size: 20px;
+
+    margin-bottom: 5px;
 }
 
 
-.scan-card p {
-    color: #68776f;
+.scan-text p {
+    font-size: 13px;
 
-    font-size: 14px;
+    line-height: 1.4;
 
-    line-height: 1.5;
-
-    margin-bottom: 22px;
+    color: #607368;
 }
 
 
@@ -214,91 +226,297 @@ body {
 
     border-radius: 12px;
 
-    background: #0e6b32;
+    background: #176b41;
 
     color: white;
 
-    font-size: 16px;
+    font-size: 15px;
 
     font-weight: bold;
 
     cursor: pointer;
-}
-
-
-#scan-button:hover {
-    background: #176b41;
-}
-
-
-/* =========================
-   QUICK ACCESS
-========================= */
-
-.quick-section {
-    margin-bottom: 25px;
-}
-
-
-.quick-section h2 {
-    font-size: 19px;
-
-    margin-bottom: 15px;
-}
-
-
-.quick-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 15px;
-}
-
-
-.quick-card {
-    padding: 50;
-
-    border: none;
-
-    border-radius: 18px;
-
-    background: white;
-
-    cursor: pointer;
-
-    text-align: center;
-
-    box-shadow:
-        0 6px 18px rgba(0, 0, 0, 0.08);
 
     transition: 0.2s;
 }
 
-.quick-card img {
-    width: 35px;
-    height: 35px;
+
+#scan-button:hover {
+    background: #0e5a35;
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+.section {
+    margin-bottom: 28px;
+}
+
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 13px;
+}
+
+
+.section-heading h2 {
+    font-size: 18px;
+
+    color: #ffffff;
+}
+
+
+.view-button {
+    border: none;
+
+    background: transparent;
+
+    color: #a8d2b5;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   MY CROPS
+========================= */
+
+.crop-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+.crop-card {
+    background: #234b35;
+
+    border: 1px solid #356447;
+
+    border-radius: 18px;
+
+    padding: 12px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+.crop-image {
+    width: 100%;
+    height: 90px;
+
+    border-radius: 13px;
+
+    background: #315b42;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    margin-bottom: 10px;
+}
+
+
+.crop-image img {
+    width: 68px;
+    height: 68px;
+
     object-fit: contain;
 }
 
-.quick-card:hover {
-    transform: translateY(-3px);
+
+.crop-card h3 {
+    font-size: 14px;
+
+    color: #ffffff;
+
+    margin-bottom: 7px;
 }
 
 
-.quick-card span {
-    display: block;
+.crop-status {
+    display: flex;
 
-    font-size: 30px;
+    align-items: center;
 
-    margin-bottom: 8px;
+    gap: 6px;
+
+    font-size: 12px;
+
+    color: #b9cdbf;
 }
 
 
-.quick-card p {
-    color: #123524;
+.status-dot {
+    width: 8px;
+    height: 8px;
 
-    font-weight: bold;
+    border-radius: 50%;
+}
+
+
+.healthy {
+    background: #54c477;
+}
+
+
+/* =========================
+   ADD CROP
+========================= */
+
+.add-crop {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 142px;
+
+    text-align: center;
+}
+
+
+.add-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #315b42;
+
+    color: #a9d6b5;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+
+.add-crop h3 {
+    color: #ffffff;
+
+    margin-bottom: 4px;
+}
+
+
+.add-crop p {
+    font-size: 12px;
+
+    color: #9eb6a6;
+}
+
+
+/* =========================
+   RECENT SCANS
+========================= */
+
+.recent-scan-card {
+    background: #234b35;
+
+    border: 1px solid #356447;
+
+    border-radius: 18px;
+
+    padding: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+.recent-icon {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    background: #315b42;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.recent-icon img {
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+}
+
+
+.recent-info {
+    flex: 1;
+}
+
+
+.recent-info h3 {
+    font-size: 14px;
+
+    color: #ffffff;
+
+    margin-bottom: 4px;
+}
+
+
+.recent-info p {
+    font-size: 12px;
+
+    color: #c0d1c5;
+
+    margin-bottom: 3px;
+}
+
+
+.recent-info span {
+    font-size: 11px;
+
+    color: #8fa99a;
+}
+
+
+.scan-status {
+    font-size: 11px;
+
+    color: #b7edc5;
+
+    background: #315b42;
+
+    padding: 5px 8px;
+
+    border-radius: 8px;
 }
 
 
@@ -306,86 +524,157 @@ body {
    CROP HEALTH
 ========================= */
 
-/* Crop Health */
-
 .health-card {
-    margin-top: 25px;
-    padding: 22px;
-    background: rgba(255, 255, 255, 0.92);
+    background: #234b35;
+
+    border: 1px solid #356447;
+
     border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    padding: 18px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-.health-card h2 {
-    margin-bottom: 6px;
-    color: #123524;
-}
 
 .health-subtitle {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 20px;
+    color: #9eb6a6;
+
+    font-size: 12px;
+
+    margin-bottom: 18px;
 }
+
 
 .health-status {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
 }
 
+
 .health-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
+    text-align: center;
+
+    padding: 10px 5px;
+
+    border-right: 1px solid #3a6048;
 }
+
+
+.health-item:last-child {
+    border-right: none;
+}
+
 
 .health-item strong {
     display: block;
-    font-size: 14px;
+
+    font-size: 12px;
+
+    color: #ffffff;
+
+    margin-bottom: 4px;
 }
+
 
 .health-item p {
-    margin-top: 3px;
-    font-size: 13px;
-    color: #777;
+    font-size: 11px;
+
+    color: #9eb6a6;
 }
+
 
 .health-dot {
-    width: 12px;
-    height: 12px;
+    display: block;
+
+    width: 9px;
+    height: 9px;
+
     border-radius: 50%;
-    flex-shrink: 0;
+
+    margin: 0 auto 7px;
 }
 
-.healthy {
-    background: #35a853;
-}
 
 .warning {
-    background: #f5b700;
+    background: #e5b83f;
 }
+
 
 .danger {
-    background: #e53935;
+    background: #e45b5b;
 }
 
-.last-scan {
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 14px;
-    background: #f4f8f3;
+
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
+
+.bottom-nav {
+    position: fixed;
+
+    bottom: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 100%;
+    max-width: 500px;
+
+    height: 68px;
+
+    background: #183c29;
+
+    border-top: 1px solid #315943;
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+    z-index: 100;
 }
 
-.last-scan p {
-    margin-top: 6px;
+
+.nav-item {
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+
+    color: #829b8b;
+
+    text-align: center;
 }
 
-.last-scan small {
+
+.nav-item span {
     display: block;
-    margin-top: 4px;
-    color: #777;
+
+    font-size: 18px;
+
+    margin-bottom: 3px;
 }
+
+
+.nav-item p {
+    font-size: 10px;
+}
+
+
+.nav-item.active {
+    color: #a9d6b5;
+
+    font-weight: bold;
+}
+
 
 /* =========================
    SMALL PHONES
@@ -394,27 +683,32 @@ body {
 @media (max-width: 380px) {
 
     .dashboard {
-        padding: 20px 15px;
+        padding: 20px 15px 90px;
     }
+
+
+    .brand h1 {
+        font-size: 18px;
+    }
+
 
     .welcome h2 {
         font-size: 23px;
     }
 
+
     .scan-card {
-        padding: 25px 20px;
+        padding: 18px;
     }
 
-}
-@media (max-width: 600px) {
 
-    .health-status {
-        flex-direction: column;
-        gap: 12px;
+    .crop-grid {
+        gap: 9px;
     }
 
-    .health-item {
-        padding: 8px;
+
+    .health-item strong {
+        font-size: 11px;
     }
 
 }

@@ -1,5 +1,9 @@
 /* THIS IS JUST FOR FUN */
+const scanButton = document.getElementById("scan-button");
 
+scanButton.addEventListener("click", () => {
+    window.location.href = "scan.html";
+});
 const icons = document.querySelectorAll(".draggable");
 
 icons.forEach(function(icon) {

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Fasal Raksha - Scan Crop</title>
+
+    <link rel="stylesheet"
+          href="css/scan.css">
+</head>
+
+<body>
+
+    <main class="scan-page">
+
+        <!-- HEADER -->
+
+        <header class="scan-header">
+
+            <button class="back-button"
+                    onclick="history.back()">
+                ‹
+            </button>
+
+            <h1>Scan Crop</h1>
+
+            <div class="header-space"></div>
+
+        </header>
+
+
+        <!-- INTRO -->
+
+        <section class="scan-intro">
+
+            <h2>Check your crop</h2>
+
+            <p>
+                Take a clear photo of your crop
+                to detect possible diseases or pests.
+            </p>
+
+        </section>
+
+
+        <!-- IMAGE AREA -->
+
+        <section class="image-area">
+
+            <div class="camera-icon">
+                📷
+            </div>
+
+            <h3>Capture a crop image</h3>
+
+            <p>
+                Make sure the affected part
+                of the plant is clearly visible.
+            </p>
+
+        </section>
+
+
+        <!-- BUTTONS -->
+
+        <section class="scan-actions">
+
+            <button class="primary-button"
+                    id="camera-button">
+
+                <span>📷</span>
+
+                Take Photo
+
+            </button>
+
+
+            <button class="secondary-button"
+                    id="gallery-button">
+
+                <span>▣</span>
+
+                Choose from Gallery
+
+            </button>
+
+        </section>
+
+
+        <!-- CROP SELECTION -->
+
+        <section class="crop-selection">
+
+            <label for="crop-type">
+                Select Crop
+            </label>
+
+            <select id="crop-type">
+
+                <option value="">
+                    Select your crop
+                </option>
+
+                <option value="rice">
+                    Rice
+                </option>
+
+                <option value="wheat">
+                    Wheat
+                </option>
+
+                <option value="tomato">
+                    Tomato
+                </option>
+
+                <option value="potato">
+                    Potato
+                </option>
+
+                <option value="maize">
+                    Maize
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- CONTINUE -->
+
+        <button class="continue-button"
+                id="continue-button">
+
+            Continue
+
+        </button>
+
+    </main>
+
+
+    <script src="js/scan.js"></script>
+
+</body>
+
+</html>
